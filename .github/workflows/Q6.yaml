@@ -26,7 +26,7 @@ jobs:
 
       - name: Create Q6_différences.txt
         run: |
-          previous_file=$(ls -t Q6_archive_*.txt | tail -n 2 | head -n 1)
+          previous_file=$(ls -t Q6_archive_*.txt | tail 2 | head 1)
           diff $previous_file $filename > Q6_différences.txt || true
 
       - name: Push Q6 files to repository
