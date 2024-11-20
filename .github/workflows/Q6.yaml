@@ -24,10 +24,15 @@ jobs:
           echo "Nombre de lignes : $(wc -l < Q6.java)" >> $filename
           echo "Nombre de caractères : $(wc -m < Q6.java)" >> $filename
 
+      - name: Create Q6_différences.txt
+        run: |
+          previous_file=$(ls -t Q6_archive_*.txt | tail -n 2 | head -n 1)
+          diff $previous_file $filename > Q6_différences.txt || true
+
       - name: Push Q6 files to repository
         run: |
           git config --global user.name "Maximeuuu"
           git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
-          git add Q6_archive_*.txt
-          git commit -m "Add Q6_archive_date.txt"
+          git add Q6_archive_*.txt Q6_différences.txt
+          git commit -m "Add Q6_archive_date.txt and Q6_différences.txt"
           git push
