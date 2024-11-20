@@ -7,7 +7,7 @@ public class Q5
 		StringBuilder sb = new StringBuilder();
 		for( int cptLig=0; cptLig<nbEtoiles; cptLig++ )
 		{
-			for( int cptCol=0; cptCol<cptLig+1; cptCol++ )
+			for( int cptCol=cptLig; cptCol<nbEtoiles; cptCol++ )
 			{
 				sb.append('*');
 			}
