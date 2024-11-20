@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.name "Maximeuuu"
           git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
-          git pull
+          git pull --rebase
           git add Q6_archive_*.txt Q6_différences.txt
           git commit -m "Add Q6_archive_date.txt and Q6_différences.txt"
           git push
