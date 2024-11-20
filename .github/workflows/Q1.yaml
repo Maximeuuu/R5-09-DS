@@ -18,8 +18,8 @@ jobs:
 
       - name: Push Q1_archive_README.md to repository
         run: |
-          git config user.name "Maxime"
-          git config user.email "maxime.lemoine374@gmail.com"
+          git config --global user.name "Maximeuuu"
+          git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
           git add Q1_archive_README.md
           git commit -m "Add Q1_archive_README.md"
           git push
