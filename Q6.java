@@ -1,5 +1,6 @@
 public class Q6
 {
+	// méthode principale pour afficher les étoiles en forme de x
 	public static void main( String[] args )
 	{
 		int nbEtoiles = Integer.parseInt(args[0]);
