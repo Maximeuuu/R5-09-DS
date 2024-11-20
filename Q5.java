@@ -9,7 +9,7 @@ public class Q5
 		{
 			for( int cptCol=cptLig; cptCol<nbEtoiles; cptCol++ )
 			{
-				sb.append('*');
+				sb.append('x');
 			}
 			sb.append('\n');
 		}
