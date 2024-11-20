@@ -1,0 +1,31 @@
+name: Q5 Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Q5_archive_date.txt
+        run: |
+          current_date=$(date '+%d-%m-%Y')
+          filename="Q5_archive_${current_date}.txt"
+          echo "Maxime Lemoine" > $filename
+          cat Q5.java >> $filename
+
+      - name: Push Q5_archive_date.txt to repository
+        run: |
+          git config --global user.name "Maximeuuu"
+          git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
+          git add Q5_archive_*.txt
+          git commit -m "Add Q5_archive_date.txt"
+          git push
