@@ -1,0 +1,29 @@
+name: Q3 Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Q3_archive_java.txt
+        run: |
+          echo "Maxime Lemoine" > Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
+
+      - name: Push Q3_archive_java.txt to repository
+        run: |
+          git config --global user.name "Maximeuuu"
+          git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
+          git add Q3_archive_java.txt
+          git commit -m "Add Q3_archive_java.txt"
+          git push
