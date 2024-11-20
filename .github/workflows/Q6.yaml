@@ -28,6 +28,6 @@ jobs:
         run: |
           git config --global user.name "Maximeuuu"
           git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
-          git add Q6_archive_*.txt Q6_différences.txt
-          git commit -m "Add Q6_archive_date.txt and Q6_différences.txt"
+          git add Q6_archive_*.txt
+          git commit -m "Add Q6_archive_date.txt"
           git push
