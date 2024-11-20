@@ -1,0 +1,30 @@
+name: Q2 Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Q2_archive_README.md
+        run: |
+          echo "Maxime Lemoine" > Q2_archive_README.md
+          echo "Date et Heure: $(date '+%d-%m-%Y %H:%M:%S')" >> Q2_archive_README.md
+          cat README.md >> Q2_archive_README.md
+
+      - name: Push Q2_archive_README.md to repository
+        run: |
+          git config --global user.name "Maximeuuu"
+          git config --global user.email "maxime.lemoine1@univ-lehavre.fr"
+          git add Q2_archive_README.md
+          git commit -m "Add Q2_archive_README.md"
+          git push
